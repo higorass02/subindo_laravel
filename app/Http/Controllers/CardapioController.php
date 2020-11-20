@@ -15,10 +15,13 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        //var_dump('teste');
-        //$opcoesCardapio = Cardapios::where('status','ativo')->orderBy('nome_op','ASC')->get();
-        //return response()->json($opcoesCardapio);
-        return response()->json(CardapiosPrecos::all());
+        $retorno = [];
+        $cardapios = Cardapios::where('status','ativo')->orderBy('id','ASC')->get();
+        foreach($cardapios as $key => $value){
+            $retorno[$key]['cardapio'] = $value;
+            $retorno[$key]['preco'] = CardapiosPrecos::where('id_cardapio',$value->id)->get();
+        }
+        return response()->json($retorno);
     }
 
     /**
@@ -36,16 +39,17 @@ class CardapioController extends Controller
         $cardapio->desc = $parametros['desc'];
         $cardapio->status = 'ativo';
 
-        $cardapioPreco = new CardapiosPrecos();
-        $cardapioPreco->preco_atual = $parametros['preco'];
-
-        if($parametros['desconto_atual']){
-            $cardapioPreco->preco_atual = $parametros['desconto_atual'];
-        }
-        $cardapioPreco->status = 'ativo';
-
         try{
             $cardapio->save();
+
+            $cardapioPreco = new CardapiosPrecos();
+            $cardapioPreco->id_cardapio = $cardapio->id;
+            $cardapioPreco->preco_atual = $parametros['preco'];
+            $cardapioPreco->preco_anterior = 0;
+            $cardapioPreco->desconto_atual = 0;
+            $cardapioPreco->desconto_anterior = 0;
+            $cardapioPreco->status = 'ativo';
+
             $cardapioPreco->save();            
             return response()->json('Cadastrado com Sucesso!');
         }catch(Execption $e){
@@ -61,8 +65,11 @@ class CardapioController extends Controller
      */
     public function show($id)
     {
-        $cardapio = Cardapios::find($id);
-        return response()->json($cardapio);
+        $retorno = [];
+        $retorno[]['cardapio'] = Cardapios::find($id);
+        $retorno[]['preco'] = CardapiosPrecos::where('id_cardapio',$id)->get();
+        
+        return response()->json($retorno);
     }
 
     /**
@@ -73,12 +80,12 @@ class CardapioController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        
         if(!$request->request->all()){
             return response()->json('Informe os parametros de alteracao!');
         }else{
             $cardapio = Cardapios::find($id);
-            $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->get();
+            $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->first();
+
             $parametros = $request->request->all();
 
             if($cardapio->nome_op != $parametros['nome']){
@@ -87,16 +94,24 @@ class CardapioController extends Controller
             if($cardapio->desc != $parametros['desc']){
                 $cardapio->desc = $parametros['desc'];
             }
-            if($parametros['preco']){
+            if(!empty($parametros['preco'])){
+                if(empty($cardapioPreco->preco_atual)){
+                    $cardapioPreco->preco_atual = 0.0;
+                }
                 $cardapioPreco->preco_anterior      = $cardapioPreco->preco_atual;
                 $cardapioPreco->preco_atual         = $parametros['preco'];
             }
-            if($parametros['desconto']){
+
+            if(!empty($parametros['desconto'])){
+                if(empty($cardapioPreco->desconto_atual)){
+                    $cardapioPreco->desconto_atual = 0.0;
+                }
                 $cardapioPreco->desconto_anterior   = $cardapioPreco->desconto_atual;
                 $cardapioPreco->desconto_atual      = $parametros['desconto'];
             }
             try{
                 $cardapio->save();
+                $cardapioPreco->save();
                 return response()->json('Editado com Sucesso!');
             }catch(Execption $e){
                 return response()->json($e->getMessage());
@@ -117,6 +132,8 @@ class CardapioController extends Controller
             return response()->json('Informe os parametros de alteracao!');
         }else{
             $cardapio = Cardapios::find($id);
+            $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->first();
+
             $parametros = $request->request->all();
 
             if($cardapio->nome_op != $parametros['nome']){
@@ -125,8 +142,24 @@ class CardapioController extends Controller
             if($cardapio->desc != $parametros['desc']){
                 $cardapio->desc = $parametros['desc'];
             }
+            if(!empty($parametros['preco'])){
+                if(empty($cardapioPreco->preco_atual)){
+                    $cardapioPreco->preco_atual = 0.0;
+                }
+                $cardapioPreco->preco_anterior      = $cardapioPreco->preco_atual;
+                $cardapioPreco->preco_atual         = $parametros['preco'];
+            }
+
+            if(!empty($parametros['desconto'])){
+                if(empty($cardapioPreco->desconto_atual)){
+                    $cardapioPreco->desconto_atual = 0.0;
+                }
+                $cardapioPreco->desconto_anterior   = $cardapioPreco->desconto_atual;
+                $cardapioPreco->desconto_atual      = $parametros['desconto'];
+            }
             try{
                 $cardapio->save();
+                $cardapioPreco->save();
                 return response()->json('Editado com Sucesso!');
             }catch(Execption $e){
                 return response()->json($e->getMessage());
@@ -143,7 +176,9 @@ class CardapioController extends Controller
     public function destroy($id)
     {
         $cardapio = Cardapios::find($id);
+        $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->first();
         $cardapio->status = 'desativado';
+        $cardapioPreco->status = 'desativado';
         try{
             $cardapio->save();
             return response()->json('Desativado com Sucesso!');
