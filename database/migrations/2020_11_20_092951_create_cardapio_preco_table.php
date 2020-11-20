@@ -15,14 +15,14 @@ class CreateCardapioPrecoTable extends Migration
     {
         Schema::create('cardapio_preco', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_cardapio');
+            $table->integer('id_cardapio');
             $table->double('preco_atual');
             $table->double('preco_anterior');
             $table->double('desconto_atual');
             $table->double('desconto_anterior');
             $table->string('status');
             $table->timestamps();
-            $table->foreign('id_cardapio')->references('id')->on('cardapios')->onDelete('cascade');
+            $table->foreign('id_cardapio')->references('id')->on('cardapios');
         });
         
     }
