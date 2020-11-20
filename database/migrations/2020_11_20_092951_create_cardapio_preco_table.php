@@ -22,8 +22,9 @@ class CreateCardapioPrecoTable extends Migration
             $table->double('desconto_anterior');
             $table->string('status');
             $table->timestamps();
+            $table->foreign('id_cardapio')->references('id')->on('cardapios')->onDelete('cascade');
         });
-        $table->foreign('id_cardapio')->references('id')->on('cardapios')->onDelete('cascade');
+        
     }
 
     /**
