@@ -18,7 +18,7 @@ class CreateTelefonesClientes extends Migration
             $table->string('telefone1');
             $table->string('telefone2');
             $table->string('status');
-            $table->string('id_solicitante_cliente');
+            $table->integer('id_solicitante_cliente');
             $table->foreign('id_solicitante_cliente')->references('id')->on('solicitantes_clientes');
             $table->timestamps();
         });
