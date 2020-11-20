@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A93EF754-DC3A-56E5-522B-02F2C034B4FC" name="tb_itens">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:57:28 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="086FA27E-7771-8563-5758-FE7975B963B1">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:58:10 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="BA20967D-757B-D167-4EB7-254A797B9D6F">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:58:10 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17BD6568-8A0F-D295-2CA4-B28F2A1A987D" name="tb_itens_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:58:10 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="086FA27E-7771-8563-5758-FE7975B963B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C2E63DBC-2055-E539-113E-BC5C297AE634" name="tp_endereco">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:40:38 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B116BB3A-337C-8B1E-E327-EA53FC30C7EB">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:45:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="3C7E2858-85B7-1B95-2E5B-6AA0DB0A35C2">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:45:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bairro" id="DAC1FD1D-066B-E1CD-7BB5-7CED95106552">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:45:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep" id="6CC952AE-D18F-512B-D1DA-C753B9AB9732">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:45:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="66E1718E-1786-2143-8AE1-545FB2525D8D">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:45:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="2C286B17-6112-41CD-5B26-A4BFF68A441C">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:51:22 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_cliente" id="8D356648-C73F-F324-29B5-EACF5B24A747">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:54:57 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="82F7E82B-094A-9488-FEC1-FAFE19B12E31" referredColumn="0B2C94D6-BEAC-C8C8-B076-5FA7C0FE92BA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="53C5E7D8-CB6D-D6C1-DDA7-C46C9B6FF1ED" name="tp_endereco_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:48:52 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B116BB3A-337C-8B1E-E327-EA53FC30C7EB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ADE2755A-E1B4-A8B2-6898-0585EF0C6206" name="tp_endereco_tb_cliente_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:54:56 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D356648-C73F-F324-29B5-EACF5B24A747"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

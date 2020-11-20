@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2085EFD5-2BC5-D5B9-DAB1-F7F6E8A48808" name="tb_cliente">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:40:33 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="0B2C94D6-BEAC-C8C8-B076-5FA7C0FE92BA">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:49:51 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="CB86A8B7-9FD3-8F9C-0024-4F7F0E1D344B">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:49:51 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_nasc" id="44E4F0AA-DBF0-93B4-2B73-E0F35E3F7626">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:49:51 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sexo" id="50954259-FD79-88A2-230C-C68D7DF5D6AF">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:52:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="8426EABF-A4F2-BD9D-6401-C91A9226DC97">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:52:17 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cpf" id="CA738A03-F2BE-A537-8503-B2936BF30E6F">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:52:35 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="5055ACDD-310B-FAA1-D19B-D4AEECD833FA">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:49:51 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="301D7096-7295-05E0-43CE-864CACED7A92" name="tb_cliente_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:52:49 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B2C94D6-BEAC-C8C8-B076-5FA7C0FE92BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

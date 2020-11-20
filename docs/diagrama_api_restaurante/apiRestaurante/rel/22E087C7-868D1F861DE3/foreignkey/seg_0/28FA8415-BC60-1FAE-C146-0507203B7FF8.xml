@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="28FA8415-BC60-1FAE-C146-0507203B7FF8" containerWithKeyObject="E5D26CB4-8AF8-81AC-5DFC-F25DBD3D7852" localFKIndex="ECD7B568-02B1-A28D-4042-6FE558CAE1BE" name="tb_cardapios_precos_tb_cardapios_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:41 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<referredTableLongName>tb_cardapios</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5C5FDF34-F366-21FA-6A63-E96411F1B1F3</referredTableID>
+<keyObject>69117447-475F-1996-003A-12F9FFD40E43</keyObject>
+<referredKeyID>69117447-475F-1996-003A-12F9FFD40E43</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

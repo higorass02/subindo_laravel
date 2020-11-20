@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5C5FDF34-F366-21FA-6A63-E96411F1B1F3" name="tb_cardapios">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:39:22 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F65CB267-DBA1-9E2A-D851-A77405601019">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:03:11 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="760A2C22-2B3E-DAAD-82B7-AC7883F9C777">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:03:26 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="desc" id="B7595147-C826-20F2-FE5E-F4FE05F1CAA4">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:03:26 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="8FB6B9F3-E005-4515-5DC0-54A262E35957">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:03:26 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="69117447-475F-1996-003A-12F9FFD40E43" name="tb_cardapios_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:03:11 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F65CB267-DBA1-9E2A-D851-A77405601019"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

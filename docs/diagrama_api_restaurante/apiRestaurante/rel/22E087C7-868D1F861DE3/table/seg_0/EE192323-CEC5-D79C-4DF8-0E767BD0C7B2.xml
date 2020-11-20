@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EE192323-CEC5-D79C-4DF8-0E767BD0C7B2" name="tb_slicitacoes_pedido">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:39:59 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="677F2F2D-D410-6A4C-1E8E-FF0262AC842E">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:04:55 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_criacao" id="64F9FD42-02EB-1726-483E-E48657B19BA2">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:05:13 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="FCECC089-CC7F-AF41-02BE-9EA3A0A47B7E">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:05:16 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tb_cardapios_id" id="7133046C-5A12-4713-4EF5-91EF546720E7">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:06:25 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C9AF272-EC65-B3F2-0A4F-8BAB34D60055" referredColumn="F65CB267-DBA1-9E2A-D851-A77405601019"/>
+</associations>
+</Column>
+<Column name="tb_cliente_id" id="D100F9B8-CE69-997A-07E3-E19281341659">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:06:30 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E5A4E119-23E0-F07F-774F-7CA3D6DDB195" referredColumn="0B2C94D6-BEAC-C8C8-B076-5FA7C0FE92BA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B7CF7900-203F-EA38-2308-F555516C08DA" name="tb_slicitacoes_pedido_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:05:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="677F2F2D-D410-6A4C-1E8E-FF0262AC842E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="276AAA77-B54D-D5DD-6852-B8616C814C52" name="tb_slicitacoes_pedido_tb_cardapios_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:06:25 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7133046C-5A12-4713-4EF5-91EF546720E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9F8E4D6E-F51C-5E30-84F8-1A6D229FAC07" name="tb_slicitacoes_pedido_tb_cliente_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:06:30 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D100F9B8-CE69-997A-07E3-E19281341659"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

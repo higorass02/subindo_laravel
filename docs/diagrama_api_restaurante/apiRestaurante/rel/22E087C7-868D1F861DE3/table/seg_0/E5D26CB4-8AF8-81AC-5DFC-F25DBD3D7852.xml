@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E5D26CB4-8AF8-81AC-5DFC-F25DBD3D7852" name="tb_cardapios_precos">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:39:45 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="84512A3F-4E29-D080-4763-006BBC616A16">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:01:19 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="preco_atual" id="49755E39-A237-8D7D-7424-7F0FE2D11552">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:01:19 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="preco_anterior" id="93B1C253-8CC3-5DF7-98CA-14D0645D9182">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:01:19 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="desconto_atual" id="521A1A70-C529-614D-353F-9938CF95C8CF">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:01:19 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="desconto_anterior" id="CC02986C-CD9C-578A-2656-6A4463A695DC">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="383B2D59-E035-42F3-3EAD-B095B362B414">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_cardapios" id="FD68EA98-BB82-4737-21FB-60C1EED24379">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:41 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28FA8415-BC60-1FAE-C146-0507203B7FF8" referredColumn="F65CB267-DBA1-9E2A-D851-A77405601019"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1C49DCB2-180B-CD50-64C4-A52E77F47766" name="tb_cardapios_precos_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:15 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84512A3F-4E29-D080-4763-006BBC616A16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECD7B568-02B1-A28D-4042-6FE558CAE1BE" name="tb_cardapios_precos_tb_cardapios_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 22:03:41 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD68EA98-BB82-4737-21FB-60C1EED24379"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

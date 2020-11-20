@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E9202A01-FE00-AF5F-64C5-CC8762638F92" name="tb_itens_cardapio">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 20:40:51 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F211E320-68BB-EFFE-9C65-0DBF8E47A9FD">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:02:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="A98D0311-B747-FB9B-B6EB-9380BD3DA86B">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:02:59 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_cardapios" id="AC0D206F-F21B-D66C-96CC-69BCE40F9400">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:04:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="489E4430-ECB7-4F5C-6246-8B87ED73BB86" referredColumn="F65CB267-DBA1-9E2A-D851-A77405601019"/>
+</associations>
+</Column>
+<Column name="id_itens" id="8507BE6F-BB53-5B41-06C8-B454D82FFF86">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:04:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D90DF9F7-A8A8-4952-4529-7B96E03DDCC7" referredColumn="086FA27E-7771-8563-5758-FE7975B963B1"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A1CF50DD-5FD3-01DA-A2EF-2E0E40AFB6EF" name="tb_itens_cardapio_PK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:02:59 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F211E320-68BB-EFFE-9C65-0DBF8E47A9FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E32EEDCE-32BC-B55C-E198-05C5C663309D" name="tb_itens_cardapio_tb_cardapios_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:04:02 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC0D206F-F21B-D66C-96CC-69BCE40F9400"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="49DE2B79-FADB-6DAE-D528-557CC624AEAB" name="tb_itens_cardapio_tb_itens_FK">
+<createdBy>higor</createdBy>
+<createdTime>2020-11-20 21:04:06 UTC</createdTime>
+<ownerDesignName>apiRestaurante</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8507BE6F-BB53-5B41-06C8-B454D82FFF86"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
