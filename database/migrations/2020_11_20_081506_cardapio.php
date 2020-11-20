@@ -13,7 +13,7 @@ class Cardapio extends Migration
      */
     public function up()
     {
-        Schema::create('cardapio', function (Blueprint $table) {
+        Schema::create('cardapios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_op');
             $table->string('desc');
@@ -29,6 +29,6 @@ class Cardapio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cardapio');
+        Schema::dropIfExists('cardapios');
     }
 }

@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cardapio extends Model
+class Cardapios extends Model
 {
-
     protected $fillable = [
         'id',
-        'nome_item',
-        'preco'
+        'nome_op',
+        'desc',
+        'status'
     ];
 }

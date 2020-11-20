@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cardapios;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
@@ -13,8 +14,8 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        
-        return response()->json('asd');
+        $opcoesCardapio = Cardapios::all();
+        return response()->json($opcoesCardapio);
     }
 
     /**
