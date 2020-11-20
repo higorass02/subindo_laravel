@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cardapios;
+use App\CardapiosPreco;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
@@ -14,8 +15,10 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        $opcoesCardapio = Cardapios::where('status','ativo')->get();
-        return response()->json($opcoesCardapio);
+        //var_dump('teste');
+        //$opcoesCardapio = Cardapios::where('status','ativo')->orderBy('nome_op','ASC')->get();
+        //return response()->json($opcoesCardapio);
+        return response()->json(CardapiosPreco::all());
     }
 
     /**
@@ -32,8 +35,18 @@ class CardapioController extends Controller
         $cardapio->nome_op = $parametros['nome'];
         $cardapio->desc = $parametros['desc'];
         $cardapio->status = 'ativo';
+
+        $cardapioPreco = new CardapiosPreco();
+        $cardapioPreco->preco_atual = $parametros['preco'];
+
+        if($parametros['desconto_atual']){
+            $cardapioPreco->preco_atual = $parametros['desconto_atual'];
+        }
+        $cardapioPreco->status = 'ativo';
+
         try{
             $cardapio->save();
+            $cardapioPreco->save();            
             return response()->json('Cadastrado com Sucesso!');
         }catch(Execption $e){
             return response()->json($e->getMessage());
@@ -65,6 +78,7 @@ class CardapioController extends Controller
             return response()->json('Informe os parametros de alteracao!');
         }else{
             $cardapio = Cardapios::find($id);
+            $cardapioPreco = CardapiosPreco::where('id_cardapio',$id)->get();
             $parametros = $request->request->all();
 
             if($cardapio->nome_op != $parametros['nome']){
@@ -72,6 +86,14 @@ class CardapioController extends Controller
             }
             if($cardapio->desc != $parametros['desc']){
                 $cardapio->desc = $parametros['desc'];
+            }
+            if($parametros['preco']){
+                $cardapioPreco->preco_anterior      = $cardapioPreco->preco_atual;
+                $cardapioPreco->preco_atual         = $parametros['preco'];
+            }
+            if($parametros['desconto']){
+                $cardapioPreco->desconto_anterior   = $cardapioPreco->desconto_atual;
+                $cardapioPreco->desconto_atual      = $parametros['desconto'];
             }
             try{
                 $cardapio->save();

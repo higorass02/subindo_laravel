@@ -12,4 +12,9 @@ class Cardapios extends Model
         'desc',
         'status'
     ];
+    
+    public function abrangencia()
+    {
+        return $this->belongsTo(Cardapios::class, 'id_cardapio', 'id');
+    }
 }
