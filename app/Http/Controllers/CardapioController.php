@@ -14,18 +14,8 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        $opcoesCardapio = Cardapios::all();
+        $opcoesCardapio = Cardapios::where('status','ativo')->get();
         return response()->json($opcoesCardapio);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -36,7 +26,18 @@ class CardapioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $parametros = $request->request->all();
+
+        $cardapio = new Cardapios();
+        $cardapio->nome_op = $parametros['nome'];
+        $cardapio->desc = $parametros['desc'];
+        $cardapio->status = 'ativo';
+        try{
+            $cardapio->save();
+            return response()->json('Cadastrado com Sucesso!');
+        }catch(Execption $e){
+            return response()->json($e->getMessage());
+        }
     }
 
     /**
@@ -47,7 +48,8 @@ class CardapioController extends Controller
      */
     public function show($id)
     {
-        //
+        $cardapio = Cardapios::find($id);
+        return response()->json($cardapio);
     }
 
     /**
@@ -56,9 +58,28 @@ class CardapioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        
+        if(!$request->request->all()){
+            return response()->json('Informe os parametros de alteracao!');
+        }else{
+            $cardapio = Cardapios::find($id);
+            $parametros = $request->request->all();
+
+            if($cardapio->nome_op != $parametros['nome']){
+                $cardapio->nome_op = $parametros['nome'];
+            }
+            if($cardapio->desc != $parametros['desc']){
+                $cardapio->desc = $parametros['desc'];
+            }
+            try{
+                $cardapio->save();
+                return response()->json('Editado com Sucesso!');
+            }catch(Execption $e){
+                return response()->json($e->getMessage());
+            }
+        }
     }
 
     /**
@@ -81,6 +102,13 @@ class CardapioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cardapio = Cardapios::find($id);
+        $cardapio->status = 'desativado';
+        try{
+            $cardapio->save();
+            return response()->json('Desativado com Sucesso!');
+        }catch(Execption $e){
+            return response()->json($e->getMessage());
+        }
     }
 }
