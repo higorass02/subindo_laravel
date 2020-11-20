@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CardapiosPrecos extends Model
 {
+    protected $table = 'cardapios_precos';
+
     protected $fillable = [
         'id',
         'id_cardapio',
