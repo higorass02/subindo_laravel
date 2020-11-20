@@ -87,12 +87,15 @@ class CardapioController extends Controller
             $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->first();
 
             $parametros = $request->request->all();
-
-            if($cardapio->nome_op != $parametros['nome']){
-                $cardapio->nome_op = $parametros['nome'];
+            if(!empty($parametros['nome'])){
+                if($cardapio->nome_op != $parametros['nome']){
+                    $cardapio->nome_op = $parametros['nome'];
+                }
             }
-            if($cardapio->desc != $parametros['desc']){
-                $cardapio->desc = $parametros['desc'];
+            if(!empty($parametros['desc'])){
+                if($cardapio->desc != $parametros['desc']){
+                    $cardapio->desc = $parametros['desc'];
+                }
             }
             if(!empty($parametros['preco'])){
                 if(empty($cardapioPreco->preco_atual)){
@@ -135,12 +138,15 @@ class CardapioController extends Controller
             $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->first();
 
             $parametros = $request->request->all();
-
-            if($cardapio->nome_op != $parametros['nome']){
-                $cardapio->nome_op = $parametros['nome'];
+            if(!empty($parametros['nome'])){
+                if($cardapio->nome_op != $parametros['nome']){
+                    $cardapio->nome_op = $parametros['nome'];
+                }
             }
-            if($cardapio->desc != $parametros['desc']){
-                $cardapio->desc = $parametros['desc'];
+            if(!empty($parametros['desc'])){
+                if($cardapio->desc != $parametros['desc']){
+                    $cardapio->desc = $parametros['desc'];
+                }
             }
             if(!empty($parametros['preco'])){
                 if(empty($cardapioPreco->preco_atual)){
