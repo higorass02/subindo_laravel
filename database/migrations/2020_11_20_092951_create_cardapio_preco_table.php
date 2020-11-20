@@ -13,7 +13,7 @@ class CreateCardapioPrecoTable extends Migration
      */
     public function up()
     {
-        Schema::create('cardapio_preco', function (Blueprint $table) {
+        Schema::create('cardapios_precos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_cardapio');
             $table->double('preco_atual');
@@ -34,6 +34,6 @@ class CreateCardapioPrecoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cardapio_preco');
+        Schema::dropIfExists('cardapios_precos');
     }
 }

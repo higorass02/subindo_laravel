@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cardapios;
-use App\CardapiosPreco;
+use App\CardapiosPrecos;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
@@ -18,7 +18,7 @@ class CardapioController extends Controller
         //var_dump('teste');
         //$opcoesCardapio = Cardapios::where('status','ativo')->orderBy('nome_op','ASC')->get();
         //return response()->json($opcoesCardapio);
-        return response()->json(CardapiosPreco::all());
+        return response()->json(CardapiosPrecos::all());
     }
 
     /**
@@ -36,7 +36,7 @@ class CardapioController extends Controller
         $cardapio->desc = $parametros['desc'];
         $cardapio->status = 'ativo';
 
-        $cardapioPreco = new CardapiosPreco();
+        $cardapioPreco = new CardapiosPrecos();
         $cardapioPreco->preco_atual = $parametros['preco'];
 
         if($parametros['desconto_atual']){
@@ -78,7 +78,7 @@ class CardapioController extends Controller
             return response()->json('Informe os parametros de alteracao!');
         }else{
             $cardapio = Cardapios::find($id);
-            $cardapioPreco = CardapiosPreco::where('id_cardapio',$id)->get();
+            $cardapioPreco = CardapiosPrecos::where('id_cardapio',$id)->get();
             $parametros = $request->request->all();
 
             if($cardapio->nome_op != $parametros['nome']){

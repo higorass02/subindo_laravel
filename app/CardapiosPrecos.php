@@ -5,7 +5,7 @@ namespace App;
 use App\Cardapios;
 use Illuminate\Database\Eloquent\Model;
 
-class CardapiosPreco extends Model
+class CardapiosPrecos extends Model
 {
     protected $fillable = [
         'id',
