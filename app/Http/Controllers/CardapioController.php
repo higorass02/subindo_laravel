@@ -91,7 +91,25 @@ class CardapioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$request->request->all()){
+            return response()->json('Informe os parametros de alteracao!');
+        }else{
+            $cardapio = Cardapios::find($id);
+            $parametros = $request->request->all();
+
+            if($cardapio->nome_op != $parametros['nome']){
+                $cardapio->nome_op = $parametros['nome'];
+            }
+            if($cardapio->desc != $parametros['desc']){
+                $cardapio->desc = $parametros['desc'];
+            }
+            try{
+                $cardapio->save();
+                return response()->json('Editado com Sucesso!');
+            }catch(Execption $e){
+                return response()->json($e->getMessage());
+            }
+        }
     }
 
     /**
